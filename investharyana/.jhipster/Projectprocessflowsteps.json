@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "steps",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updatedate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "projectid",
+            "fieldType": "UUID"
+        }
+    ],
+    "changelogDate": "20170313120748",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "projectprocessflowsteps",
+    "pagination": "no"
+}

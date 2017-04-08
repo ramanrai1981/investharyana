@@ -1,0 +1,148 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "siteaddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "multyvillageinvolved",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "villageinvolved",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "falls_in_aravalli",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "islandprocured",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "allotedbyhsiidc",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "estate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cluster",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phase",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sector",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "plotno",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hadbastno",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "liesunder_mc",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "distance_from_mc",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "islocated_in_urban",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "totalproposedprojectarea",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "proposedbuilt_up_area",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "certifiedownership",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "leaseapplicable",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "landagreementapplicable",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "intersectiondistance",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "railwaydistance",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "confirmitylanduse",
+            "fieldType": "Boolean",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "existing_building_applicable",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "site_situated_in_controlled_area",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "buildingexisted",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "district",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "block",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city_town_village",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "connectingroad",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "landzoneuse_type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tehsil_subtehsil",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updatedate",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170313114208",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "projectsitedetail",
+    "pagination": "no"
+}

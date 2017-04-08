@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "capacity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "particulars",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type_of_fuel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "air_pollution_control_device",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updatedate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "projectid",
+            "fieldType": "UUID"
+        }
+    ],
+    "changelogDate": "20170313122621",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "emissiondetail",
+    "pagination": "no"
+}

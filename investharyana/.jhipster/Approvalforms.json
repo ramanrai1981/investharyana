@@ -1,0 +1,18 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "existingapprovalforms",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170313082827",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "approvalforms",
+    "pagination": "no"
+}

@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "source_of_generation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "naturetype",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mode_of_disposal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updatedate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "projectid",
+            "fieldType": "UUID"
+        }
+    ],
+    "changelogDate": "20170313122751",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "wastewaterdetail",
+    "pagination": "no"
+}

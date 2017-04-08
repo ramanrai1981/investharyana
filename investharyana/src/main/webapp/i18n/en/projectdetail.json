@@ -1,0 +1,33 @@
+{
+    "investhryApp": {
+        "projectdetail" : {
+            "home": {
+                "title": "Projectdetails",
+                "createLabel": "Create a new Projectdetail",
+                "createOrEditLabel": "Create or edit a Projectdetail"
+            },
+            "created": "A new Projectdetail is created with identifier {{ param }}",
+            "updated": "A Projectdetail is updated with identifier {{ param }}",
+            "deleted": "A Projectdetail is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Projectdetail {{ id }}?"
+            },
+            "detail": {
+                "title": "Projectdetail"
+            },
+            "projectpurpose": "Projectpurpose",
+            "niccode": "Niccode",
+            "existing_regulatory_approval": "Existing Regulatory Approval",
+            "edc_sif_clu_fee_paid_applicable": "Edc Sif Clu Fee Paid Applicable",
+            "approval_application_form": "Approval Application Form",
+            "category_of_project": "Category Of Project",
+            "collaboration_with_foreign_country": "Collaboration With Foreign Country",
+            "projectype": "Projectype",
+            "sectorname": "Sectorname",
+            "size_of_industry": "Size Of Industry",
+            "createdate": "Createdate",
+            "updatedate": "Updatedate",
+            "sectorother": "Sectorother"
+        }
+    }
+}

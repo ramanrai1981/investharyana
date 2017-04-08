@@ -1,0 +1,238 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProjectsitedetailLabel" data-translate="investhryApp.projectsitedetail.home.createOrEditLabel">Create or edit a Projectsitedetail</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.projectsitedetail.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.projectsitedetail.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.siteaddress" for="field_siteaddress">Siteaddress</label>
+            <input type="text" class="form-control" name="siteaddress" id="field_siteaddress"
+                    ng-model="vm.projectsitedetail.siteaddress"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.multyvillageinvolved" for="field_multyvillageinvolved">Multyvillageinvolved</label>
+            <input type="checkbox" class="form-control" name="multyvillageinvolved" id="field_multyvillageinvolved"
+                    ng-model="vm.projectsitedetail.multyvillageinvolved"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.villageinvolved" for="field_villageinvolved">Villageinvolved</label>
+            <input type="text" class="form-control" name="villageinvolved" id="field_villageinvolved"
+                    ng-model="vm.projectsitedetail.villageinvolved"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.falls_in_aravalli" for="field_falls_in_aravalli">Falls In Aravalli</label>
+            <input type="checkbox" class="form-control" name="falls_in_aravalli" id="field_falls_in_aravalli"
+                    ng-model="vm.projectsitedetail.falls_in_aravalli"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.islandprocured" for="field_islandprocured">Islandprocured</label>
+            <input type="checkbox" class="form-control" name="islandprocured" id="field_islandprocured"
+                    ng-model="vm.projectsitedetail.islandprocured"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.allotedbyhsiidc" for="field_allotedbyhsiidc">Allotedbyhsiidc</label>
+            <input type="checkbox" class="form-control" name="allotedbyhsiidc" id="field_allotedbyhsiidc"
+                    ng-model="vm.projectsitedetail.allotedbyhsiidc"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.estate" for="field_estate">Estate</label>
+            <input type="text" class="form-control" name="estate" id="field_estate"
+                    ng-model="vm.projectsitedetail.estate"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.cluster" for="field_cluster">Cluster</label>
+            <input type="text" class="form-control" name="cluster" id="field_cluster"
+                    ng-model="vm.projectsitedetail.cluster"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.phase" for="field_phase">Phase</label>
+            <input type="text" class="form-control" name="phase" id="field_phase"
+                    ng-model="vm.projectsitedetail.phase"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.sector" for="field_sector">Sector</label>
+            <input type="text" class="form-control" name="sector" id="field_sector"
+                    ng-model="vm.projectsitedetail.sector"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.plotno" for="field_plotno">Plotno</label>
+            <input type="text" class="form-control" name="plotno" id="field_plotno"
+                    ng-model="vm.projectsitedetail.plotno"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.hadbastno" for="field_hadbastno">Hadbastno</label>
+            <input type="text" class="form-control" name="hadbastno" id="field_hadbastno"
+                    ng-model="vm.projectsitedetail.hadbastno"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.liesunder_mc" for="field_liesunder_mc">Liesunder Mc</label>
+            <input type="checkbox" class="form-control" name="liesunder_mc" id="field_liesunder_mc"
+                    ng-model="vm.projectsitedetail.liesunder_mc"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.distance_from_mc" for="field_distance_from_mc">Distance From Mc</label>
+            <input type="number" class="form-control" name="distance_from_mc" id="field_distance_from_mc"
+                    ng-model="vm.projectsitedetail.distance_from_mc"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.islocated_in_urban" for="field_islocated_in_urban">Islocated In Urban</label>
+            <input type="checkbox" class="form-control" name="islocated_in_urban" id="field_islocated_in_urban"
+                    ng-model="vm.projectsitedetail.islocated_in_urban"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.totalproposedprojectarea" for="field_totalproposedprojectarea">Totalproposedprojectarea</label>
+            <input type="number" class="form-control" name="totalproposedprojectarea" id="field_totalproposedprojectarea"
+                    ng-model="vm.projectsitedetail.totalproposedprojectarea"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.proposedbuilt_up_area" for="field_proposedbuilt_up_area">Proposedbuilt Up Area</label>
+            <input type="number" class="form-control" name="proposedbuilt_up_area" id="field_proposedbuilt_up_area"
+                    ng-model="vm.projectsitedetail.proposedbuilt_up_area"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.certifiedownership" for="field_certifiedownership">Certifiedownership</label>
+            <input type="checkbox" class="form-control" name="certifiedownership" id="field_certifiedownership"
+                    ng-model="vm.projectsitedetail.certifiedownership"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.leaseapplicable" for="field_leaseapplicable">Leaseapplicable</label>
+            <input type="checkbox" class="form-control" name="leaseapplicable" id="field_leaseapplicable"
+                    ng-model="vm.projectsitedetail.leaseapplicable"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.landagreementapplicable" for="field_landagreementapplicable">Landagreementapplicable</label>
+            <input type="checkbox" class="form-control" name="landagreementapplicable" id="field_landagreementapplicable"
+                    ng-model="vm.projectsitedetail.landagreementapplicable"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.intersectiondistance" for="field_intersectiondistance">Intersectiondistance</label>
+            <input type="checkbox" class="form-control" name="intersectiondistance" id="field_intersectiondistance"
+                    ng-model="vm.projectsitedetail.intersectiondistance"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.railwaydistance" for="field_railwaydistance">Railwaydistance</label>
+            <input type="checkbox" class="form-control" name="railwaydistance" id="field_railwaydistance"
+                    ng-model="vm.projectsitedetail.railwaydistance"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.confirmitylanduse" for="field_confirmitylanduse">Confirmitylanduse</label>
+            <input type="checkbox" class="form-control" name="confirmitylanduse" id="field_confirmitylanduse"
+                    ng-model="vm.projectsitedetail.confirmitylanduse"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.existing_building_applicable" for="field_existing_building_applicable">Existing Building Applicable</label>
+            <input type="checkbox" class="form-control" name="existing_building_applicable" id="field_existing_building_applicable"
+                    ng-model="vm.projectsitedetail.existing_building_applicable"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.site_situated_in_controlled_area" for="field_site_situated_in_controlled_area">Site Situated In Controlled Area</label>
+            <input type="checkbox" class="form-control" name="site_situated_in_controlled_area" id="field_site_situated_in_controlled_area"
+                    ng-model="vm.projectsitedetail.site_situated_in_controlled_area"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.buildingexisted" for="field_buildingexisted">Buildingexisted</label>
+            <input type="text" class="form-control" name="buildingexisted" id="field_buildingexisted"
+                    ng-model="vm.projectsitedetail.buildingexisted"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.district" for="field_district">District</label>
+            <input type="text" class="form-control" name="district" id="field_district"
+                    ng-model="vm.projectsitedetail.district"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.block" for="field_block">Block</label>
+            <input type="text" class="form-control" name="block" id="field_block"
+                    ng-model="vm.projectsitedetail.block"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.city_town_village" for="field_city_town_village">City Town Village</label>
+            <input type="text" class="form-control" name="city_town_village" id="field_city_town_village"
+                    ng-model="vm.projectsitedetail.city_town_village"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.connectingroad" for="field_connectingroad">Connectingroad</label>
+            <input type="text" class="form-control" name="connectingroad" id="field_connectingroad"
+                    ng-model="vm.projectsitedetail.connectingroad"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.landzoneuse_type" for="field_landzoneuse_type">Landzoneuse Type</label>
+            <input type="text" class="form-control" name="landzoneuse_type" id="field_landzoneuse_type"
+                    ng-model="vm.projectsitedetail.landzoneuse_type"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.tehsil_subtehsil" for="field_tehsil_subtehsil">Tehsil Subtehsil</label>
+            <input type="text" class="form-control" name="tehsil_subtehsil" id="field_tehsil_subtehsil"
+                    ng-model="vm.projectsitedetail.tehsil_subtehsil"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.createdate" for="field_createdate">Createdate</label>
+                <div class="input-group">
+                    <input id="field_createdate" type="text" class="form-control" name="createdate" datetime-picker="{{dateformat}}" ng-model="vm.projectsitedetail.createdate" is-open="vm.datePickerOpenStatus.createdate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createdate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.projectsitedetail.updatedate" for="field_updatedate">Updatedate</label>
+                <div class="input-group">
+                    <input id="field_updatedate" type="text" class="form-control" name="updatedate" datetime-picker="{{dateformat}}" ng-model="vm.projectsitedetail.updatedate" is-open="vm.datePickerOpenStatus.updatedate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('updatedate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

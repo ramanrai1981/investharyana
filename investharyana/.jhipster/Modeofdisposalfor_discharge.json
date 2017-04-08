@@ -1,0 +1,18 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "disposal_for_discharge",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170313083143",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "modeofdisposalfor_discharge",
+    "pagination": "no"
+}

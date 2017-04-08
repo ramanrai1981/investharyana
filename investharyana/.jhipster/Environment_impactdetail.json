@@ -1,0 +1,83 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "water_process",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "water_cooling",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "water_domestic",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "water_other",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "waste_water_process",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "waste_water_cooling",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "waste_water_domesting",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "waste_water_other",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "source_of_water_supply",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mode_of_disposal_for_discharge",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "recycling_process",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "recycling_cooling",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "recycling_domestic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "recycling_other",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updatedate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "sourcewatersupplyother",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modedisposalother",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170313123226",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "environment_impactdetail",
+    "pagination": "no"
+}

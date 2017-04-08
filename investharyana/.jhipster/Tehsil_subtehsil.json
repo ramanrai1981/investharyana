@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "tehsil_subtehsilname",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "districtname",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170313082239",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "tehsil_subtehsil",
+    "pagination": "no"
+}

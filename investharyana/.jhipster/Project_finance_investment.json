@@ -1,0 +1,67 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "land_cost",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "building_cost",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "machinery_cost",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "misc_assests",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "total_project_cost",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "isfdi",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "fdivalue",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "project_construction_start_date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "commercial_activity_start_date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "fdi_country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "foreign_funding_source",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "totalpurposedemployment",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updatedate",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170313115519",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "project_finance_investment",
+    "pagination": "no"
+}

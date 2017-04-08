@@ -1,0 +1,18 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "connectingraodtype",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170313082420",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "connectingroad",
+    "pagination": "no"
+}

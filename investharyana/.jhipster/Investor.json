@@ -1,0 +1,95 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "mouapplicable",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "mousignyear",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "mouidnumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "firstname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "middlename",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "emailprimary",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "emailsecondary",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userlogin",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cityname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "countryname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statename",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pincode",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "phonenumber",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "mobilenumber",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "cafpin",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "createdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updatedate",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170313084828",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "investor",
+    "pagination": "no"
+}

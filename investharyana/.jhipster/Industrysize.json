@@ -1,0 +1,18 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "sizeofindustry",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170313082638",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "industrysize",
+    "pagination": "no"
+}

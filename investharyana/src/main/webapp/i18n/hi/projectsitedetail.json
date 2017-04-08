@@ -1,0 +1,54 @@
+{
+    "investhryApp": {
+        "projectsitedetail" : {
+            "home": {
+                "title": "Projectsitedetails",
+                "createLabel": "नया Projectsitedetail बनाएँ",
+                "createOrEditLabel": "Projectsitedetail बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Projectsitedetail [identifier: {{ param }}] तैयार है",
+            "updated": "एक Projectsitedetail [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Projectsitedetail [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Projectsitedetail [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Projectsitedetail"
+            },
+            "siteaddress": "Siteaddress",
+            "multyvillageinvolved": "Multyvillageinvolved",
+            "villageinvolved": "Villageinvolved",
+            "falls_in_aravalli": "Falls In Aravalli",
+            "islandprocured": "Islandprocured",
+            "allotedbyhsiidc": "Allotedbyhsiidc",
+            "estate": "Estate",
+            "cluster": "Cluster",
+            "phase": "Phase",
+            "sector": "Sector",
+            "plotno": "Plotno",
+            "hadbastno": "Hadbastno",
+            "liesunder_mc": "Liesunder Mc",
+            "distance_from_mc": "Distance From Mc",
+            "islocated_in_urban": "Islocated In Urban",
+            "totalproposedprojectarea": "Totalproposedprojectarea",
+            "proposedbuilt_up_area": "Proposedbuilt Up Area",
+            "certifiedownership": "Certifiedownership",
+            "leaseapplicable": "Leaseapplicable",
+            "landagreementapplicable": "Landagreementapplicable",
+            "intersectiondistance": "Intersectiondistance",
+            "railwaydistance": "Railwaydistance",
+            "confirmitylanduse": "Confirmitylanduse",
+            "existing_building_applicable": "Existing Building Applicable",
+            "site_situated_in_controlled_area": "Site Situated In Controlled Area",
+            "buildingexisted": "Buildingexisted",
+            "district": "District",
+            "block": "Block",
+            "city_town_village": "City Town Village",
+            "connectingroad": "Connectingroad",
+            "landzoneuse_type": "Landzoneuse Type",
+            "tehsil_subtehsil": "Tehsil Subtehsil",
+            "createdate": "Createdate",
+            "updatedate": "Updatedate"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "acceptance",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "applicationdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "place",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updatedate",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170313125732",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "term_declaration_accept",
+    "pagination": "no"
+}

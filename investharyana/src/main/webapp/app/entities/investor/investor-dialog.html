@@ -1,0 +1,160 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myInvestorLabel" data-translate="investhryApp.investor.home.createOrEditLabel">Create or edit a Investor</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.investor.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.investor.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.mouapplicable" for="field_mouapplicable">Mouapplicable</label>
+            <input type="checkbox" class="form-control" name="mouapplicable" id="field_mouapplicable"
+                    ng-model="vm.investor.mouapplicable"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.mousignyear" for="field_mousignyear">Mousignyear</label>
+            <input type="number" class="form-control" name="mousignyear" id="field_mousignyear"
+                    ng-model="vm.investor.mousignyear"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.mouidnumber" for="field_mouidnumber">Mouidnumber</label>
+            <input type="text" class="form-control" name="mouidnumber" id="field_mouidnumber"
+                    ng-model="vm.investor.mouidnumber"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.firstname" for="field_firstname">Firstname</label>
+            <input type="text" class="form-control" name="firstname" id="field_firstname"
+                    ng-model="vm.investor.firstname"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.middlename" for="field_middlename">Middlename</label>
+            <input type="text" class="form-control" name="middlename" id="field_middlename"
+                    ng-model="vm.investor.middlename"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.lastname" for="field_lastname">Lastname</label>
+            <input type="text" class="form-control" name="lastname" id="field_lastname"
+                    ng-model="vm.investor.lastname"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.address1" for="field_address1">Address 1</label>
+            <input type="text" class="form-control" name="address1" id="field_address1"
+                    ng-model="vm.investor.address1"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.address2" for="field_address2">Address 2</label>
+            <input type="text" class="form-control" name="address2" id="field_address2"
+                    ng-model="vm.investor.address2"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.address3" for="field_address3">Address 3</label>
+            <input type="text" class="form-control" name="address3" id="field_address3"
+                    ng-model="vm.investor.address3"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.emailprimary" for="field_emailprimary">Emailprimary</label>
+            <input type="text" class="form-control" name="emailprimary" id="field_emailprimary"
+                    ng-model="vm.investor.emailprimary"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.emailsecondary" for="field_emailsecondary">Emailsecondary</label>
+            <input type="text" class="form-control" name="emailsecondary" id="field_emailsecondary"
+                    ng-model="vm.investor.emailsecondary"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.userlogin" for="field_userlogin">Userlogin</label>
+            <input type="text" class="form-control" name="userlogin" id="field_userlogin"
+                    ng-model="vm.investor.userlogin"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.cityname" for="field_cityname">Cityname</label>
+            <input type="text" class="form-control" name="cityname" id="field_cityname"
+                    ng-model="vm.investor.cityname"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.countryname" for="field_countryname">Countryname</label>
+            <input type="text" class="form-control" name="countryname" id="field_countryname"
+                    ng-model="vm.investor.countryname"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.statename" for="field_statename">Statename</label>
+            <input type="text" class="form-control" name="statename" id="field_statename"
+                    ng-model="vm.investor.statename"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.pincode" for="field_pincode">Pincode</label>
+            <input type="number" class="form-control" name="pincode" id="field_pincode"
+                    ng-model="vm.investor.pincode"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.phonenumber" for="field_phonenumber">Phonenumber</label>
+            <input type="number" class="form-control" name="phonenumber" id="field_phonenumber"
+                    ng-model="vm.investor.phonenumber"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.mobilenumber" for="field_mobilenumber">Mobilenumber</label>
+            <input type="number" class="form-control" name="mobilenumber" id="field_mobilenumber"
+                    ng-model="vm.investor.mobilenumber"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.cafpin" for="field_cafpin">Cafpin</label>
+            <input type="number" class="form-control" name="cafpin" id="field_cafpin"
+                    ng-model="vm.investor.cafpin"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.createdate" for="field_createdate">Createdate</label>
+                <div class="input-group">
+                    <input id="field_createdate" type="text" class="form-control" name="createdate" datetime-picker="{{dateformat}}" ng-model="vm.investor.createdate" is-open="vm.datePickerOpenStatus.createdate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createdate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="investhryApp.investor.updatedate" for="field_updatedate">Updatedate</label>
+                <div class="input-group">
+                    <input id="field_updatedate" type="text" class="form-control" name="updatedate" datetime-picker="{{dateformat}}" ng-model="vm.investor.updatedate" is-open="vm.datePickerOpenStatus.updatedate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('updatedate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,32 @@
+{
+    "investhryApp": {
+        "companydetail" : {
+            "home": {
+                "title": "Companydetails",
+                "createLabel": "नया Companydetail बनाएँ",
+                "createOrEditLabel": "Companydetail बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Companydetail [identifier: {{ param }}] तैयार है",
+            "updated": "एक Companydetail [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Companydetail [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Companydetail [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Companydetail"
+            },
+            "promoter_md_director": "Promoter Md Director",
+            "designation": "Designation",
+            "businessentity": "Businessentity",
+            "director_promoter_md_ceo_number": "Director Promoter Md Ceo Number",
+            "pan_number": "Pan Number",
+            "aadhar_number": "Aadhar Number",
+            "nri": "Nri",
+            "tin_vat_number": "Tin Vat Number",
+            "cst_number": "Cst Number",
+            "businessentitytype": "Businessentitytype",
+            "createdate": "Createdate",
+            "updatedate": "Updatedate"
+        }
+    }
+}

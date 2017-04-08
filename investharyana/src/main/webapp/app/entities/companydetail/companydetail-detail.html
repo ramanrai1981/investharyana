@@ -1,0 +1,67 @@
+
+<div>
+    <h2><span data-translate="investhryApp.companydetail.detail.title">Companydetail</span> {{vm.companydetail.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="investhryApp.companydetail.promoter_md_director">Promoter Md Director</span></dt>
+        <dd>
+            <span>{{vm.companydetail.promoter_md_director}}</span>
+        </dd>
+        <dt><span data-translate="investhryApp.companydetail.designation">Designation</span></dt>
+        <dd>
+            <span>{{vm.companydetail.designation}}</span>
+        </dd>
+        <dt><span data-translate="investhryApp.companydetail.businessentity">Businessentity</span></dt>
+        <dd>
+            <span>{{vm.companydetail.businessentity}}</span>
+        </dd>
+        <dt><span data-translate="investhryApp.companydetail.director_promoter_md_ceo_number">Director Promoter Md Ceo Number</span></dt>
+        <dd>
+            <span>{{vm.companydetail.director_promoter_md_ceo_number}}</span>
+        </dd>
+        <dt><span data-translate="investhryApp.companydetail.pan_number">Pan Number</span></dt>
+        <dd>
+            <span>{{vm.companydetail.pan_number}}</span>
+        </dd>
+        <dt><span data-translate="investhryApp.companydetail.aadhar_number">Aadhar Number</span></dt>
+        <dd>
+            <span>{{vm.companydetail.aadhar_number}}</span>
+        </dd>
+        <dt><span data-translate="investhryApp.companydetail.nri">Nri</span></dt>
+        <dd>
+            <span>{{vm.companydetail.nri}}</span>
+        </dd>
+        <dt><span data-translate="investhryApp.companydetail.tin_vat_number">Tin Vat Number</span></dt>
+        <dd>
+            <span>{{vm.companydetail.tin_vat_number}}</span>
+        </dd>
+        <dt><span data-translate="investhryApp.companydetail.cst_number">Cst Number</span></dt>
+        <dd>
+            <span>{{vm.companydetail.cst_number}}</span>
+        </dd>
+        <dt><span data-translate="investhryApp.companydetail.businessentitytype">Businessentitytype</span></dt>
+        <dd>
+            <span>{{vm.companydetail.businessentitytype}}</span>
+        </dd>
+        <dt><span data-translate="investhryApp.companydetail.createdate">Createdate</span></dt>
+        <dd>
+            <span>{{vm.companydetail.createdate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="investhryApp.companydetail.updatedate">Updatedate</span></dt>
+        <dd>
+            <span>{{vm.companydetail.updatedate | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="companydetail-detail.edit({id:vm.companydetail.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

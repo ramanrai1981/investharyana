@@ -1,0 +1,122 @@
+<div>
+    <h2 data-translate="investhryApp.projectsitedetail.home.title">Projectsitedetails</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="projectsitedetail.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="investhryApp.projectsitedetail.home.createLabel">
+                        Create new Projectsitedetail
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.siteaddress">Siteaddress</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.multyvillageinvolved">Multyvillageinvolved</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.villageinvolved">Villageinvolved</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.falls_in_aravalli">Falls In Aravalli</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.islandprocured">Islandprocured</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.allotedbyhsiidc">Allotedbyhsiidc</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.estate">Estate</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.cluster">Cluster</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.phase">Phase</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.sector">Sector</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.plotno">Plotno</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.hadbastno">Hadbastno</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.liesunder_mc">Liesunder Mc</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.distance_from_mc">Distance From Mc</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.islocated_in_urban">Islocated In Urban</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.totalproposedprojectarea">Totalproposedprojectarea</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.proposedbuilt_up_area">Proposedbuilt Up Area</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.certifiedownership">Certifiedownership</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.leaseapplicable">Leaseapplicable</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.landagreementapplicable">Landagreementapplicable</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.intersectiondistance">Intersectiondistance</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.railwaydistance">Railwaydistance</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.confirmitylanduse">Confirmitylanduse</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.existing_building_applicable">Existing Building Applicable</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.site_situated_in_controlled_area">Site Situated In Controlled Area</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.buildingexisted">Buildingexisted</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.district">District</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.block">Block</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.city_town_village">City Town Village</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.connectingroad">Connectingroad</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.landzoneuse_type">Landzoneuse Type</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.tehsil_subtehsil">Tehsil Subtehsil</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.createdate">Createdate</span></th>
+                    <th><span data-translate="investhryApp.projectsitedetail.updatedate">Updatedate</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="projectsitedetail in vm.projectsitedetails track by projectsitedetail.id">
+                    <td><a ui-sref="projectsitedetail-detail({id:projectsitedetail.id})">{{projectsitedetail.id}}</a></td>
+                    <td>{{projectsitedetail.siteaddress}}</td>
+                    <td>{{projectsitedetail.multyvillageinvolved}}</td>
+                    <td>{{projectsitedetail.villageinvolved}}</td>
+                    <td>{{projectsitedetail.falls_in_aravalli}}</td>
+                    <td>{{projectsitedetail.islandprocured}}</td>
+                    <td>{{projectsitedetail.allotedbyhsiidc}}</td>
+                    <td>{{projectsitedetail.estate}}</td>
+                    <td>{{projectsitedetail.cluster}}</td>
+                    <td>{{projectsitedetail.phase}}</td>
+                    <td>{{projectsitedetail.sector}}</td>
+                    <td>{{projectsitedetail.plotno}}</td>
+                    <td>{{projectsitedetail.hadbastno}}</td>
+                    <td>{{projectsitedetail.liesunder_mc}}</td>
+                    <td>{{projectsitedetail.distance_from_mc}}</td>
+                    <td>{{projectsitedetail.islocated_in_urban}}</td>
+                    <td>{{projectsitedetail.totalproposedprojectarea}}</td>
+                    <td>{{projectsitedetail.proposedbuilt_up_area}}</td>
+                    <td>{{projectsitedetail.certifiedownership}}</td>
+                    <td>{{projectsitedetail.leaseapplicable}}</td>
+                    <td>{{projectsitedetail.landagreementapplicable}}</td>
+                    <td>{{projectsitedetail.intersectiondistance}}</td>
+                    <td>{{projectsitedetail.railwaydistance}}</td>
+                    <td>{{projectsitedetail.confirmitylanduse}}</td>
+                    <td>{{projectsitedetail.existing_building_applicable}}</td>
+                    <td>{{projectsitedetail.site_situated_in_controlled_area}}</td>
+                    <td>{{projectsitedetail.buildingexisted}}</td>
+                    <td>{{projectsitedetail.district}}</td>
+                    <td>{{projectsitedetail.block}}</td>
+                    <td>{{projectsitedetail.city_town_village}}</td>
+                    <td>{{projectsitedetail.connectingroad}}</td>
+                    <td>{{projectsitedetail.landzoneuse_type}}</td>
+                    <td>{{projectsitedetail.tehsil_subtehsil}}</td>
+                    <td>{{projectsitedetail.createdate | date:'medium'}}</td>
+                    <td>{{projectsitedetail.updatedate | date:'medium'}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="projectsitedetail-detail({id:projectsitedetail.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="projectsitedetail.edit({id:projectsitedetail.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="projectsitedetail.delete({id:projectsitedetail.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

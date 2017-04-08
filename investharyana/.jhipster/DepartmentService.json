@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "serviceName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "serviceDescription",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "duration",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "stage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "departmentname",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170311171701",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "department_service",
+    "pagination": "no"
+}

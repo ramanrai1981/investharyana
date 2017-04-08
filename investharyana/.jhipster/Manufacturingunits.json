@@ -1,0 +1,18 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "unittypes",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170313083012",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "manufacturingunits",
+    "pagination": "no"
+}

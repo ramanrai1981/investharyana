@@ -1,0 +1,18 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "typeoffuel",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170313084152",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "emmision_fuel_type",
+    "pagination": "no"
+}

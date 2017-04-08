@@ -1,0 +1,18 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "particulars",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170313084107",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "particular",
+    "pagination": "no"
+}

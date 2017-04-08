@@ -1,0 +1,18 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "watersupplysourcetype",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170313083049",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "watersupplysource",
+    "pagination": "no"
+}

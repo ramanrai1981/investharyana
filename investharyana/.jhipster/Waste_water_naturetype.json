@@ -1,0 +1,18 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "naturetype",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170313084329",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "waste_water_naturetype",
+    "pagination": "no"
+}

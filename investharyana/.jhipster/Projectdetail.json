@@ -1,0 +1,63 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "projectpurpose",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "niccode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "existing_regulatory_approval",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "edc_sif_clu_fee_paid_applicable",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "approval_application_form",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "category_of_project",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "collaboration_with_foreign_country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "projectype",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sectorname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "size_of_industry",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updatedate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "sectorother",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170313112040",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "projectdetail",
+    "pagination": "no"
+}

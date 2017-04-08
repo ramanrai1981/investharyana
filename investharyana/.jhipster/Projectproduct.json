@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "mainproduct",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "units",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updatedate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "projectid",
+            "fieldType": "UUID"
+        }
+    ],
+    "changelogDate": "20170313120512",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "projectproduct",
+    "pagination": "no"
+}

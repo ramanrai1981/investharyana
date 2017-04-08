@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "districtname",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "statename",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170313081807",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "district",
+    "pagination": "no"
+}
