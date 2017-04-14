@@ -6,7 +6,6 @@ import com.datastax.driver.core.*;
 import com.datastax.driver.mapping.Mapper;
 import com.datastax.driver.mapping.MappingManager;
 import org.springframework.stereotype.Repository;
-import org.springframework.util.StringUtils;
 
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
@@ -32,6 +31,14 @@ public class ProjectServiceReportInfoRepository {
 
     private PreparedStatement insertByDeptStmt;
 
+    private PreparedStatement deleteByDepartmentStmt;
+
+    private PreparedStatement findByProjectDeptServiceStmt;
+
+    private PreparedStatement insertByProjectDeptServiceStmt;
+
+    private PreparedStatement deleteByProjectDeptServiceStmt;
+
     public ProjectServiceReportInfoRepository(Session session) {
         this.session = session;
         this.mapper = new MappingManager(session).mapper(ProjectServiceReportInfo.class);
@@ -46,6 +53,23 @@ public class ProjectServiceReportInfoRepository {
         insertByDeptStmt = session.prepare(
             "INSERT INTO projectServiceReportInfo_By_DepartmentName (departmentname, id) " +
                 "VALUES (:departmentname, :id)");
+
+        this.deleteByDepartmentStmt = session.prepare(
+            "DELETE FROM projectServiceReportInfo_By_DepartmentName " +
+                "WHERE departmentname = :departmentname");
+
+        this.findByProjectDeptServiceStmt = session.prepare(
+            "SELECT id " +
+                "FROM projectServiceReportByProjectDeptService " +
+                "WHERE projectid = :projectid and departmentname = :departmentname and servicename = :servicename");
+
+        insertByProjectDeptServiceStmt = session.prepare(
+            "INSERT INTO projectServiceReportByProjectDeptService (projectid, departmentname, servicename, id) " +
+                "VALUES (:projectid, :departmentname, :servicename, :id)");
+
+        this.deleteByProjectDeptServiceStmt = session.prepare(
+            "DELETE FROM projectServiceReportByProjectDeptService " +
+                "WHERE projectid = :projectid and departmentname = :departmentname and servicename = :servicename");
     }
 
     public List<ProjectServiceReportInfo> findAll() {
@@ -69,6 +93,9 @@ public class ProjectServiceReportInfoRepository {
                 projectServiceReportInfo.setFinalActionDate(row.get("finalActionDate", ZonedDateTime.class));
                 projectServiceReportInfo.setProjectInvestment(row.getDouble("projectInvestment"));
                 projectServiceReportInfo.setProjectEmployment(row.getString("projectEmployment"));
+                projectServiceReportInfo.setProposedprojectarea(row.getString("proposedprojectarea"));
+                projectServiceReportInfo.setConfirmitylanduse(row.getBool("confirmitylanduse"));
+                projectServiceReportInfo.setLandzoneusetype(row.getString("landzoneusetype"));
                 return projectServiceReportInfo;
             }
         ).forEach(projectServiceReportInfosList::add);
@@ -90,11 +117,28 @@ public class ProjectServiceReportInfoRepository {
         if (!(rs.isExhausted())) {
             ProjectServiceReportInfo projectServiceReportInfo = new ProjectServiceReportInfo();
             projectServiceReportInfo = Optional.ofNullable(rs.one().getUUID("id"))
-            .map(id -> Optional.ofNullable(mapper.get(id)))
-            .get().get();
+                .map(id -> Optional.ofNullable(mapper.get(id)))
+                .get().get();
             projectServiceReportInfoList.add(projectServiceReportInfo);
         }
         return projectServiceReportInfoList;
+    }
+
+    public ProjectServiceReportInfo findOneByProjectDepartmentService(UUID projectid,String department,String service) {
+        BoundStatement stmt = findByProjectDeptServiceStmt.bind();
+        stmt.setUUID("projectid", projectid);
+        stmt.setString("departmentname", department);
+        stmt.setString("servicename", service);
+        return findOneFromIndex(stmt).get();
+    }
+    private Optional<ProjectServiceReportInfo> findOneFromIndex(BoundStatement stmt) {
+        ResultSet rs = session.execute(stmt);
+        if (rs.isExhausted()) {
+            return Optional.empty();
+        }
+        return Optional.ofNullable(rs.one().getUUID("id"))
+            .map(id -> Optional.ofNullable(mapper.get(id)))
+            .get();
     }
 
     public ProjectServiceReportInfo save(ProjectServiceReportInfo projectServiceReportInfo) {
@@ -106,19 +150,43 @@ public class ProjectServiceReportInfoRepository {
         BatchStatement batch = new BatchStatement();
 
         batch.add(insertByDeptStmt.bind()
-        .setString("departmentname", projectServiceReportInfo.getDepartmentname())
-        .setUUID("id", projectServiceReportInfo.getId()));
+            .setString("departmentname", projectServiceReportInfo.getDepartmentname())
+            .setUUID("id", projectServiceReportInfo.getId()));
+
+        batch.add(insertByProjectDeptServiceStmt.bind()
+            .setString("departmentname", projectServiceReportInfo.getDepartmentname())
+            .setUUID("projectid", projectServiceReportInfo.getProjectid())
+            .setString("servicename", projectServiceReportInfo.getServicename())
+            .setUUID("id", projectServiceReportInfo.getId()));
 
         session.execute(batch);
         return projectServiceReportInfo;
     }
 
-    public void delete(UUID id) {
-        mapper.delete(id);
+    public void delete(ProjectServiceReportInfo projectServiceReportInfo) {
+        mapper.delete(projectServiceReportInfo.getId());
+        deleteByProject(projectServiceReportInfo.getDepartmentname());
+        deleteByProjectDepartmentService(projectServiceReportInfo.getProjectid(),projectServiceReportInfo.getDepartmentname(),projectServiceReportInfo.getServicename());
     }
 
     public void deleteAll() {
         BoundStatement stmt = truncateStmt.bind();
         session.execute(stmt);
+    }
+
+    public void deleteByProject(String departmentname) {
+        BatchStatement batch = new BatchStatement();
+        batch.add(deleteByDepartmentStmt.bind()
+            .setString("departmentname", departmentname));
+        session.execute(batch);
+    }
+
+    public void deleteByProjectDepartmentService(UUID projectid,String departmentname, String servicename) {
+        BatchStatement batch = new BatchStatement();
+        batch.add(deleteByProjectDeptServiceStmt.bind()
+            .setUUID("projectid", projectid)
+            .setString("departmentname", departmentname)
+            .setString("servicename", servicename));
+        session.execute(batch);
     }
 }

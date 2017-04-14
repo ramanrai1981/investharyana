@@ -46,7 +46,7 @@
          vm.loadPending=loadPending;
             function loadPending(){
             //alert('Pending List');
-            Pendingprojectlist.query({cafpin: "Pending"}, function(data){
+            Pendingprojectlist.query({cafpin: "4499"}, function(data){
                  console.log(data);
                  vm.projectlist=data;
              });

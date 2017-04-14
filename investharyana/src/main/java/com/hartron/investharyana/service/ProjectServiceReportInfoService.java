@@ -23,8 +23,6 @@ public interface ProjectServiceReportInfoService {
      */
     List<ProjectServiceReportInfoDTO> findAll();
 
-    List<ProjectServiceReportInfoDTO> findAllByDepartment(String departmentname);
-
     /**
      *  Get the "id" projectServiceReportInfo.
      *
@@ -39,4 +37,8 @@ public interface ProjectServiceReportInfoService {
      *  @param id the id of the entity
      */
     void delete(String id);
+
+    List<ProjectServiceReportInfoDTO> findAllByDepartment(String departmentname);
+
+    ProjectServiceReportInfoDTO findByProjectDepartmentService(String projectid, String departmentname,String servicename);
 }

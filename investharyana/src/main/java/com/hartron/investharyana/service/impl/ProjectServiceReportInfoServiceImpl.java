@@ -61,16 +61,6 @@ public class ProjectServiceReportInfoServiceImpl implements ProjectServiceReport
         return result;
     }
 
-    @Override
-    public List<ProjectServiceReportInfoDTO> findAllByDepartment(String departmentname) {
-        log.debug("Request to get all ProjectServiceReportInfos by department");
-        List<ProjectServiceReportInfoDTO> result = projectServiceReportInfoRepository.findAllByDept(departmentname).stream()
-            .map(projectServiceReportInfoMapper::projectServiceReportInfoToProjectServiceReportInfoDTO)
-            .collect(Collectors.toCollection(LinkedList::new));
-
-        return result;
-    }
-
     /**
      *  Get one projectServiceReportInfo by id.
      *
@@ -93,6 +83,26 @@ public class ProjectServiceReportInfoServiceImpl implements ProjectServiceReport
     @Override
     public void delete(String id) {
         log.debug("Request to delete ProjectServiceReportInfo : {}", id);
-        projectServiceReportInfoRepository.delete(UUID.fromString(id));
+        ProjectServiceReportInfo projectServiceReportInfo =  projectServiceReportInfoRepository.findOne(UUID.fromString(id));
+        if(projectServiceReportInfo!=null)
+            projectServiceReportInfoRepository.delete(projectServiceReportInfo);
+    }
+
+    @Override
+    public List<ProjectServiceReportInfoDTO> findAllByDepartment(String departmentname) {
+        log.debug("Request to get all ProjectServiceReportInfos by department");
+        List<ProjectServiceReportInfoDTO> result = projectServiceReportInfoRepository.findAllByDept(departmentname).stream()
+            .map(projectServiceReportInfoMapper::projectServiceReportInfoToProjectServiceReportInfoDTO)
+            .collect(Collectors.toCollection(LinkedList::new));
+
+        return result;
+    }
+
+    @Override
+    public ProjectServiceReportInfoDTO findByProjectDepartmentService(String projectid, String departmentname, String servicename) {
+        log.debug("Request to get ProjectServiceReportInfo by ProjectDepartmentService : {}", projectid,departmentname,servicename);
+        ProjectServiceReportInfo projectServiceReportInfo = projectServiceReportInfoRepository.findOneByProjectDepartmentService(UUID.fromString(projectid),departmentname,servicename);
+        ProjectServiceReportInfoDTO projectServiceReportInfoDTO = projectServiceReportInfoMapper.projectServiceReportInfoToProjectServiceReportInfoDTO(projectServiceReportInfo);
+        return projectServiceReportInfoDTO;
     }
 }

@@ -1,5 +1,5 @@
 
-CREATE TABLE IF NOT exists investor (
+CREATE TABLE IF NOT EXISTS investor (
     id uuid,
     mouapplicable boolean,
     mousignyear int,
@@ -23,11 +23,4 @@ CREATE TABLE IF NOT exists investor (
     createdate timestamp,
     updatedate timestamp,
     PRIMARY KEY(id)
-);
-
-CREATE TABLE IF NOT exists investor_by_cafpin (
-cafpin double,
-id uuid,
-PRIMARY KEY(cafpin, id)
-
 );

@@ -25,10 +25,17 @@ public class Projectserviceformfielddata implements Serializable {
     private String formfieldvalue;
 
     @NotNull
-    private UUID projectserviceformfieldvalue;
-
-    @NotNull
     private UUID projectid;
+
+    private String formfieldName;
+
+    private UUID serviceformfieldid;
+
+    private String formfieldtype;
+
+    private Integer formfieldOrder;
+
+    private String formtypeOption;
 
     public UUID getId() {
         return id;
@@ -64,19 +71,6 @@ public class Projectserviceformfielddata implements Serializable {
         this.formfieldvalue = formfieldvalue;
     }
 
-    public UUID getProjectserviceformfieldvalue() {
-        return projectserviceformfieldvalue;
-    }
-
-    public Projectserviceformfielddata projectserviceformfieldvalue(UUID projectserviceformfieldvalue) {
-        this.projectserviceformfieldvalue = projectserviceformfieldvalue;
-        return this;
-    }
-
-    public void setProjectserviceformfieldvalue(UUID projectserviceformfieldvalue) {
-        this.projectserviceformfieldvalue = projectserviceformfieldvalue;
-    }
-
     public UUID getProjectid() {
         return projectid;
     }
@@ -88,6 +82,71 @@ public class Projectserviceformfielddata implements Serializable {
 
     public void setProjectid(UUID projectid) {
         this.projectid = projectid;
+    }
+
+    public String getFormfieldName() {
+        return formfieldName;
+    }
+
+    public Projectserviceformfielddata formfieldName(String formfieldName) {
+        this.formfieldName = formfieldName;
+        return this;
+    }
+
+    public void setFormfieldName(String formfieldName) {
+        this.formfieldName = formfieldName;
+    }
+
+    public UUID getServiceformfieldid() {
+        return serviceformfieldid;
+    }
+
+    public Projectserviceformfielddata serviceformfieldid(UUID serviceformfieldid) {
+        this.serviceformfieldid = serviceformfieldid;
+        return this;
+    }
+
+    public void setServiceformfieldid(UUID serviceformfieldid) {
+        this.serviceformfieldid = serviceformfieldid;
+    }
+
+    public String getFormfieldtype() {
+        return formfieldtype;
+    }
+
+    public Projectserviceformfielddata formfieldtype(String formfieldtype) {
+        this.formfieldtype = formfieldtype;
+        return this;
+    }
+
+    public void setFormfieldtype(String formfieldtype) {
+        this.formfieldtype = formfieldtype;
+    }
+
+    public Integer getFormfieldOrder() {
+        return formfieldOrder;
+    }
+
+    public Projectserviceformfielddata formfieldOrder(Integer formfieldOrder) {
+        this.formfieldOrder = formfieldOrder;
+        return this;
+    }
+
+    public void setFormfieldOrder(Integer formfieldOrder) {
+        this.formfieldOrder = formfieldOrder;
+    }
+
+    public String getFormtypeOption() {
+        return formtypeOption;
+    }
+
+    public Projectserviceformfielddata formtypeOption(String formtypeOption) {
+        this.formtypeOption = formtypeOption;
+        return this;
+    }
+
+    public void setFormtypeOption(String formtypeOption) {
+        this.formtypeOption = formtypeOption;
     }
 
     @Override
@@ -116,8 +175,12 @@ public class Projectserviceformfielddata implements Serializable {
             "id=" + id +
             ", serviceid='" + serviceid + "'" +
             ", formfieldvalue='" + formfieldvalue + "'" +
-            ", projectserviceformfieldvalue='" + projectserviceformfieldvalue + "'" +
             ", projectid='" + projectid + "'" +
+            ", formfieldName='" + formfieldName + "'" +
+            ", serviceformfieldid='" + serviceformfieldid + "'" +
+            ", formfieldtype='" + formfieldtype + "'" +
+            ", formfieldOrder='" + formfieldOrder + "'" +
+            ", formtypeOption='" + formtypeOption + "'" +
             '}';
     }
 }

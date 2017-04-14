@@ -46,11 +46,23 @@ public class ProjectserviceformfielddataResourceIntTest extends AbstractCassandr
     private static final String DEFAULT_FORMFIELDVALUE = "AAAAAAAAAA";
     private static final String UPDATED_FORMFIELDVALUE = "BBBBBBBBBB";
 
-    private static final UUID DEFAULT_PROJECTSERVICEFORMFIELDVALUE = UUID.randomUUID();
-    private static final UUID UPDATED_PROJECTSERVICEFORMFIELDVALUE = UUID.randomUUID();
-
     private static final UUID DEFAULT_PROJECTID = UUID.randomUUID();
     private static final UUID UPDATED_PROJECTID = UUID.randomUUID();
+
+    private static final String DEFAULT_FORMFIELD_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_FORMFIELD_NAME = "BBBBBBBBBB";
+
+    private static final UUID DEFAULT_SERVICEFORMFIELDID = UUID.randomUUID();
+    private static final UUID UPDATED_SERVICEFORMFIELDID = UUID.randomUUID();
+
+    private static final String DEFAULT_FORMFIELDTYPE = "AAAAAAAAAA";
+    private static final String UPDATED_FORMFIELDTYPE = "BBBBBBBBBB";
+
+    private static final Integer DEFAULT_FORMFIELD_ORDER = 1;
+    private static final Integer UPDATED_FORMFIELD_ORDER = 2;
+
+    private static final String DEFAULT_FORMTYPE_OPTION = "AAAAAAAAAA";
+    private static final String UPDATED_FORMTYPE_OPTION = "BBBBBBBBBB";
 
     @Autowired
     private ProjectserviceformfielddataRepository projectserviceformfielddataRepository;
@@ -94,8 +106,12 @@ public class ProjectserviceformfielddataResourceIntTest extends AbstractCassandr
         Projectserviceformfielddata projectserviceformfielddata = new Projectserviceformfielddata()
                 .serviceid(DEFAULT_SERVICEID)
                 .formfieldvalue(DEFAULT_FORMFIELDVALUE)
-                .projectserviceformfieldvalue(DEFAULT_PROJECTSERVICEFORMFIELDVALUE)
-                .projectid(DEFAULT_PROJECTID);
+                .projectid(DEFAULT_PROJECTID)
+                .formfieldName(DEFAULT_FORMFIELD_NAME)
+                .serviceformfieldid(DEFAULT_SERVICEFORMFIELDID)
+                .formfieldtype(DEFAULT_FORMFIELDTYPE)
+                .formfieldOrder(DEFAULT_FORMFIELD_ORDER)
+                .formtypeOption(DEFAULT_FORMTYPE_OPTION);
         return projectserviceformfielddata;
     }
 
@@ -123,8 +139,12 @@ public class ProjectserviceformfielddataResourceIntTest extends AbstractCassandr
         Projectserviceformfielddata testProjectserviceformfielddata = projectserviceformfielddataList.get(projectserviceformfielddataList.size() - 1);
         assertThat(testProjectserviceformfielddata.getServiceid()).isEqualTo(DEFAULT_SERVICEID);
         assertThat(testProjectserviceformfielddata.getFormfieldvalue()).isEqualTo(DEFAULT_FORMFIELDVALUE);
-        assertThat(testProjectserviceformfielddata.getProjectserviceformfieldvalue()).isEqualTo(DEFAULT_PROJECTSERVICEFORMFIELDVALUE);
         assertThat(testProjectserviceformfielddata.getProjectid()).isEqualTo(DEFAULT_PROJECTID);
+        assertThat(testProjectserviceformfielddata.getFormfieldName()).isEqualTo(DEFAULT_FORMFIELD_NAME);
+        assertThat(testProjectserviceformfielddata.getServiceformfieldid()).isEqualTo(DEFAULT_SERVICEFORMFIELDID);
+        assertThat(testProjectserviceformfielddata.getFormfieldtype()).isEqualTo(DEFAULT_FORMFIELDTYPE);
+        assertThat(testProjectserviceformfielddata.getFormfieldOrder()).isEqualTo(DEFAULT_FORMFIELD_ORDER);
+        assertThat(testProjectserviceformfielddata.getFormtypeOption()).isEqualTo(DEFAULT_FORMTYPE_OPTION);
     }
 
     @Test
@@ -152,24 +172,6 @@ public class ProjectserviceformfielddataResourceIntTest extends AbstractCassandr
         int databaseSizeBeforeTest = projectserviceformfielddataRepository.findAll().size();
         // set the field null
         projectserviceformfielddata.setServiceid(null);
-
-        // Create the Projectserviceformfielddata, which fails.
-        ProjectserviceformfielddataDTO projectserviceformfielddataDTO = projectserviceformfielddataMapper.projectserviceformfielddataToProjectserviceformfielddataDTO(projectserviceformfielddata);
-
-        restProjectserviceformfielddataMockMvc.perform(post("/api/projectserviceformfielddata")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(projectserviceformfielddataDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Projectserviceformfielddata> projectserviceformfielddataList = projectserviceformfielddataRepository.findAll();
-        assertThat(projectserviceformfielddataList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    public void checkProjectserviceformfieldvalueIsRequired() throws Exception {
-        int databaseSizeBeforeTest = projectserviceformfielddataRepository.findAll().size();
-        // set the field null
-        projectserviceformfielddata.setProjectserviceformfieldvalue(null);
 
         // Create the Projectserviceformfielddata, which fails.
         ProjectserviceformfielddataDTO projectserviceformfielddataDTO = projectserviceformfielddataMapper.projectserviceformfielddataToProjectserviceformfielddataDTO(projectserviceformfielddata);
@@ -213,8 +215,12 @@ public class ProjectserviceformfielddataResourceIntTest extends AbstractCassandr
             .andExpect(jsonPath("$.[*].id").value(hasItem(projectserviceformfielddata.getId().toString())))
             .andExpect(jsonPath("$.[*].serviceid").value(hasItem(DEFAULT_SERVICEID.toString())))
             .andExpect(jsonPath("$.[*].formfieldvalue").value(hasItem(DEFAULT_FORMFIELDVALUE.toString())))
-            .andExpect(jsonPath("$.[*].projectserviceformfieldvalue").value(hasItem(DEFAULT_PROJECTSERVICEFORMFIELDVALUE.toString())))
-            .andExpect(jsonPath("$.[*].projectid").value(hasItem(DEFAULT_PROJECTID.toString())));
+            .andExpect(jsonPath("$.[*].projectid").value(hasItem(DEFAULT_PROJECTID.toString())))
+            .andExpect(jsonPath("$.[*].formfieldName").value(hasItem(DEFAULT_FORMFIELD_NAME.toString())))
+            .andExpect(jsonPath("$.[*].serviceformfieldid").value(hasItem(DEFAULT_SERVICEFORMFIELDID.toString())))
+            .andExpect(jsonPath("$.[*].formfieldtype").value(hasItem(DEFAULT_FORMFIELDTYPE.toString())))
+            .andExpect(jsonPath("$.[*].formfieldOrder").value(hasItem(DEFAULT_FORMFIELD_ORDER)))
+            .andExpect(jsonPath("$.[*].formtypeOption").value(hasItem(DEFAULT_FORMTYPE_OPTION.toString())));
     }
 
     @Test
@@ -229,8 +235,12 @@ public class ProjectserviceformfielddataResourceIntTest extends AbstractCassandr
             .andExpect(jsonPath("$.id").value(projectserviceformfielddata.getId().toString()))
             .andExpect(jsonPath("$.serviceid").value(DEFAULT_SERVICEID.toString()))
             .andExpect(jsonPath("$.formfieldvalue").value(DEFAULT_FORMFIELDVALUE.toString()))
-            .andExpect(jsonPath("$.projectserviceformfieldvalue").value(DEFAULT_PROJECTSERVICEFORMFIELDVALUE.toString()))
-            .andExpect(jsonPath("$.projectid").value(DEFAULT_PROJECTID.toString()));
+            .andExpect(jsonPath("$.projectid").value(DEFAULT_PROJECTID.toString()))
+            .andExpect(jsonPath("$.formfieldName").value(DEFAULT_FORMFIELD_NAME.toString()))
+            .andExpect(jsonPath("$.serviceformfieldid").value(DEFAULT_SERVICEFORMFIELDID.toString()))
+            .andExpect(jsonPath("$.formfieldtype").value(DEFAULT_FORMFIELDTYPE.toString()))
+            .andExpect(jsonPath("$.formfieldOrder").value(DEFAULT_FORMFIELD_ORDER))
+            .andExpect(jsonPath("$.formtypeOption").value(DEFAULT_FORMTYPE_OPTION.toString()));
     }
 
     @Test
@@ -251,8 +261,12 @@ public class ProjectserviceformfielddataResourceIntTest extends AbstractCassandr
         updatedProjectserviceformfielddata
                 .serviceid(UPDATED_SERVICEID)
                 .formfieldvalue(UPDATED_FORMFIELDVALUE)
-                .projectserviceformfieldvalue(UPDATED_PROJECTSERVICEFORMFIELDVALUE)
-                .projectid(UPDATED_PROJECTID);
+                .projectid(UPDATED_PROJECTID)
+                .formfieldName(UPDATED_FORMFIELD_NAME)
+                .serviceformfieldid(UPDATED_SERVICEFORMFIELDID)
+                .formfieldtype(UPDATED_FORMFIELDTYPE)
+                .formfieldOrder(UPDATED_FORMFIELD_ORDER)
+                .formtypeOption(UPDATED_FORMTYPE_OPTION);
         ProjectserviceformfielddataDTO projectserviceformfielddataDTO = projectserviceformfielddataMapper.projectserviceformfielddataToProjectserviceformfielddataDTO(updatedProjectserviceformfielddata);
 
         restProjectserviceformfielddataMockMvc.perform(put("/api/projectserviceformfielddata")
@@ -266,8 +280,12 @@ public class ProjectserviceformfielddataResourceIntTest extends AbstractCassandr
         Projectserviceformfielddata testProjectserviceformfielddata = projectserviceformfielddataList.get(projectserviceformfielddataList.size() - 1);
         assertThat(testProjectserviceformfielddata.getServiceid()).isEqualTo(UPDATED_SERVICEID);
         assertThat(testProjectserviceformfielddata.getFormfieldvalue()).isEqualTo(UPDATED_FORMFIELDVALUE);
-        assertThat(testProjectserviceformfielddata.getProjectserviceformfieldvalue()).isEqualTo(UPDATED_PROJECTSERVICEFORMFIELDVALUE);
         assertThat(testProjectserviceformfielddata.getProjectid()).isEqualTo(UPDATED_PROJECTID);
+        assertThat(testProjectserviceformfielddata.getFormfieldName()).isEqualTo(UPDATED_FORMFIELD_NAME);
+        assertThat(testProjectserviceformfielddata.getServiceformfieldid()).isEqualTo(UPDATED_SERVICEFORMFIELDID);
+        assertThat(testProjectserviceformfielddata.getFormfieldtype()).isEqualTo(UPDATED_FORMFIELDTYPE);
+        assertThat(testProjectserviceformfielddata.getFormfieldOrder()).isEqualTo(UPDATED_FORMFIELD_ORDER);
+        assertThat(testProjectserviceformfielddata.getFormtypeOption()).isEqualTo(UPDATED_FORMTYPE_OPTION);
     }
 
     @Test

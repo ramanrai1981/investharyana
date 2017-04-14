@@ -85,14 +85,12 @@ public class ServiceFormFieldServiceImpl implements ServiceFormFieldService{
         log.debug("Request to delete ServiceFormField : {}", id);
         serviceFormFieldRepository.delete(UUID.fromString(id));
     }
-
     @Override
-    public List<ServiceFormFieldDTO> findServiceFormFieldsByServiceId(String serviceid) {
-        log.debug("Request to get all ServiceFormFields by Service");
-        List<ServiceFormFieldDTO> result = serviceFormFieldRepository.findServiceFormFieldsByService(UUID.fromString(serviceid)).stream()
+    public List<ServiceFormFieldDTO> findAllByServiceid(String serviceid) {
+        log.debug("Request to get all serviceformfield by serviceid : {}", serviceid);
+        List<ServiceFormFieldDTO> result = serviceFormFieldRepository.findAllByServiceid(UUID.fromString(serviceid)).stream()
             .map(serviceFormFieldMapper::serviceFormFieldToServiceFormFieldDTO)
             .collect(Collectors.toCollection(LinkedList::new));
-
         return result;
     }
 }

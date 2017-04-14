@@ -19,7 +19,6 @@
 
 
         vm.loadAll();
-        loadByEmail();
         JhiLanguageService.getAll().then(function (languages) {
             vm.languages = languages;
         });
@@ -37,12 +36,6 @@
 
         function loadAll () {
             User.query(onSuccess, onError);
-        }
-
-        function loadByEmail(){
-            User.query({email: "dh@hdfhf.com"}, function(data){
-                console.log(data);
-            });
         }
 
         function onSuccess(data, headers) {

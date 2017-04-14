@@ -37,6 +37,6 @@ public interface ServiceFormFieldService {
      *  @param id the id of the entity
      */
     void delete(String id);
+    List<ServiceFormFieldDTO> findAllByServiceid(String serviceid);
 
-    List<ServiceFormFieldDTO> findServiceFormFieldsByServiceId(String serviceid);
 }

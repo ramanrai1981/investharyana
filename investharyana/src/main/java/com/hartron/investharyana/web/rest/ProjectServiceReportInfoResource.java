@@ -2,6 +2,7 @@ package com.hartron.investharyana.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.hartron.investharyana.service.ProjectServiceReportInfoService;
+import com.hartron.investharyana.service.Project_finance_investmentService;
 import com.hartron.investharyana.web.rest.util.HeaderUtil;
 import com.hartron.investharyana.service.dto.ProjectServiceReportInfoDTO;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -87,13 +88,6 @@ public class ProjectServiceReportInfoResource {
     public List<ProjectServiceReportInfoDTO> getAllProjectServiceReportInfos() {
         log.debug("REST request to get all ProjectServiceReportInfos");
         return projectServiceReportInfoService.findAll();
-    }
-
-    @GetMapping("/project-service-report-infos/department/{departmentname}")
-    @Timed
-    public List<ProjectServiceReportInfoDTO> getAllProjectServiceReportInfosByDepartment(@PathVariable String departmentname) {
-        log.debug("REST request to get all ProjectServiceReportInfos by department");
-        return projectServiceReportInfoService.findAllByDepartment(departmentname);
     }
 
     /**

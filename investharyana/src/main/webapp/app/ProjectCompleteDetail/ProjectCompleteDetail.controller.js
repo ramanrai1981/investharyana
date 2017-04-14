@@ -25,6 +25,12 @@
         vm.electricrequirement=vm.CompleteProjectDetail.electricrequirementDTO;
         vm.projectcombinecodes=vm.CompleteProjectDetail.projectdetailcombinecodesDTO;
         vm.project_phase=vm.CompleteProjectDetail.project_phaseDTOList;
+        vm.projectrawmaterial=vm.CompleteProjectDetail.projectrawmaterialDTOList;
+        vm.projectproduct=vm.CompleteProjectDetail.projectproductDTOList;
+        vm.projectprocessflowsteps=vm.CompleteProjectDetail.projectprocessflowstepsDTOList;
+        vm.environmentimpactdetail=vm.CompleteProjectDetail.environment_impactdetailDTO;
+        vm.emissiondetail=vm.CompleteProjectDetail.emissiondetailDTOList;
+        vm.wastewaterdetail=vm.CompleteProjectDetail.wastewaterdetailDTOList;
 
         $scope.$on('authenticationSuccess', function() {
             getAccount();

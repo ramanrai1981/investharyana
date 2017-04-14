@@ -1,6 +1,7 @@
 package com.hartron.investharyana.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.hartron.investharyana.security.SecurityUtils;
 import com.hartron.investharyana.service.ProjectservicedetailService;
 import com.hartron.investharyana.web.rest.util.HeaderUtil;
 import com.hartron.investharyana.service.dto.ProjectservicedetailDTO;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.ZonedDateTime;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +30,7 @@ public class ProjectservicedetailResource {
     private final Logger log = LoggerFactory.getLogger(ProjectservicedetailResource.class);
 
     private static final String ENTITY_NAME = "projectservicedetail";
-        
+
     private final ProjectservicedetailService projectservicedetailService;
 
     public ProjectservicedetailResource(ProjectservicedetailService projectservicedetailService) {
@@ -49,6 +51,8 @@ public class ProjectservicedetailResource {
         if (projectservicedetailDTO.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new projectservicedetail cannot already have an ID")).body(null);
         }
+        projectservicedetailDTO.setRequireMarkedOnDate(ZonedDateTime.now());
+        projectservicedetailDTO.setRequireMarkedBy(SecurityUtils.getCurrentUserLogin());
         ProjectservicedetailDTO result = projectservicedetailService.save(projectservicedetailDTO);
         return ResponseEntity.created(new URI("/api/projectservicedetails/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
@@ -70,6 +74,32 @@ public class ProjectservicedetailResource {
         log.debug("REST request to update Projectservicedetail : {}", projectservicedetailDTO);
         if (projectservicedetailDTO.getId() == null) {
             return createProjectservicedetail(projectservicedetailDTO);
+        }
+        if(projectservicedetailDTO.getIsAssigned()==true)
+        {
+            ProjectservicedetailDTO projectservicedetailDTO1= projectservicedetailService.findOne(projectservicedetailDTO.getId().toString());
+            if(projectservicedetailDTO1.getIsAssigned()==false)
+            {
+                projectservicedetailDTO.setAssigOnDate(ZonedDateTime.now());
+                projectservicedetailDTO.setAssignBy(SecurityUtils.getCurrentUserLogin());
+            }
+        }
+        if(projectservicedetailDTO.getFormFilledStatus()==true)
+        {
+            ProjectservicedetailDTO projectservicedetailDTO1= projectservicedetailService.findOne(projectservicedetailDTO.getId().toString());
+            if(projectservicedetailDTO1.getFormFilledStatus()==false)
+            {
+                projectservicedetailDTO.setFormFilledOnDate(ZonedDateTime.now());
+                projectservicedetailDTO.setFormFilledBy(SecurityUtils.getCurrentUserLogin());
+            }
+        }
+        if(projectservicedetailDTO.getIsPaymentMade()==true)
+        {
+            ProjectservicedetailDTO projectservicedetailDTO1= projectservicedetailService.findOne(projectservicedetailDTO.getId().toString());
+            if(projectservicedetailDTO1.getIsPaymentMade()==false)
+            {
+                projectservicedetailDTO.setPaymentMadeOnDate(ZonedDateTime.now());
+            }
         }
         ProjectservicedetailDTO result = projectservicedetailService.save(projectservicedetailDTO);
         return ResponseEntity.ok()
@@ -117,4 +147,10 @@ public class ProjectservicedetailResource {
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 
+    @GetMapping("/projectservicedetails/project/{projectid}")
+    @Timed
+    public List<ProjectservicedetailDTO> getAllProjectservicedetailsByProjectid(@PathVariable String projectid) {
+        log.debug("REST request to get all Projectservicedetails");
+        return projectservicedetailService.findAllByProjectid(projectid);
+    }
 }

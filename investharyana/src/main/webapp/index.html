@@ -12,11 +12,15 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="app/layouts/navbar/navbar.css">
     <link rel="stylesheet" href="app/home/home.css">
+    <link rel="stylesheet" href="app/serviceclearanceactions/payUButton.css">
+    <!--<link rel="stylesheet" href="app/home/font-awesome.min.css">-->
     <link rel="stylesheet" href="app/dashboard/dashboard.css">
+    <!--<link href="content/css/font-awesome.min.css" rel="stylesheet">-->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="app/home/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
+
     <!-- endinject -->
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
@@ -83,6 +87,8 @@
     <script src="app/services/user/user.service.js"></script>
     <script src="app/services/profiles/profile.service.js"></script>
     <script src="app/services/profiles/page-ribbon.directive.js"></script>
+    <script src="app/services/FileManagement/FileManagement.service.js"></script>
+    <script src="app/services/FileManagement/FileManagement.directive.js"></script>
     <script src="app/services/auth/register.service.js"></script>
     <script src="app/services/auth/principal.service.js"></script>
     <script src="app/services/auth/password-reset-init.service.js"></script>
@@ -94,14 +100,18 @@
     <script src="app/services/auth/auth.jwt.service.js"></script>
     <script src="app/services/auth/activate.service.js"></script>
     <script src="app/services/auth/account.service.js"></script>
-    <script src="app/projectdetailjist/Untitled Folder/payfee_dialog.controller.js"></script>
-    <script src="app/projectdetailjist/Untitled Folder/fillform_dialog.controller.js"></script>
+    <script src="app/serviceclearanceactions/verifyPayment.controller.js"></script>
+    <script src="app/serviceclearanceactions/servicePayment.controller.js"></script>
+    <script src="app/serviceclearanceactions/serviceForm.controller.js"></script>
+    <script src="app/serviceclearanceactions/serviceclearanceactions.state.js"></script>
+    <script src="app/serviceclearanceactions/serviceclearanceactions.controller.js"></script>
+    <script src="app/serviceclearanceactions/serviceClearance.controller.js"></script>
+    <script src="app/serviceclearanceactions/rejectDialog.controller.js"></script>
+    <script src="app/serviceclearanceactions/deemedclearance.controller.js"></script>
+    <script src="app/serviceclearanceactions/commentDialog.controller.js"></script>
+    <script src="app/serviceclearanceactions/assignServiceDialog.controller.js"></script>
     <script src="app/projectdetailjist/projectdetailjist.state.js"></script>
     <script src="app/projectdetailjist/projectdetailjist.controller.js"></script>
-    <script src="app/projectdetailjist/payfee_dialog.controller.js"></script>
-    <script src="app/projectdetailjist/fillform_dialog.controller.js"></script>
-    <script src="app/projectdetailjist/abc/payfee_dialog.controller.js"></script>
-    <script src="app/projectdetailjist/abc/fillform_dialog.controller.js"></script>
     <script src="app/ProjectCompleteDetail/ProjectCompleteDetail.state.js"></script>
     <script src="app/ProjectCompleteDetail/ProjectCompleteDetail.controller.js"></script>
     <script src="app/processapplication/processapplication.state.js"></script>
@@ -186,6 +196,7 @@
     <script src="app/entities/service-form-field/service-form-field-delete-dialog.controller.js"></script>
     <script src="app/entities/service-form-field/service-form-field.state.js"></script>
     <script src="app/entities/service-form-field/service-form-field.service.js"></script>
+    <script src="app/entities/service-form-field/serviceformfieldsbyService.service.js"></script>
     <script src="app/entities/service-form-field/service-form-field.controller.js"></script>
     <script src="app/entities/sector/sector-dialog.controller.js"></script>
     <script src="app/entities/sector/sector-detail.controller.js"></script>
@@ -216,7 +227,10 @@
     <script src="app/entities/projectserviceformfielddata/projectserviceformfielddata-delete-dialog.controller.js"></script>
     <script src="app/entities/projectserviceformfielddata/projectserviceformfielddata.state.js"></script>
     <script src="app/entities/projectserviceformfielddata/projectserviceformfielddata.service.js"></script>
+    <script src="app/entities/projectserviceformfielddata/serviceFormFieldDataCollection.service.js"></script>
+    <script src="app/entities/projectserviceformfielddata/projectserviceformfielddata.service.js"></script>
     <script src="app/entities/projectserviceformfielddata/projectserviceformfielddata.controller.js"></script>
+    <script src="app/entities/projectservicedetail/projectservicedetailbyProject.service.js"></script>
     <script src="app/entities/projectservicedetail/projectservicedetail-dialog.controller.js"></script>
     <script src="app/entities/projectservicedetail/projectservicedetail-detail.controller.js"></script>
     <script src="app/entities/projectservicedetail/projectservicedetail-delete-dialog.controller.js"></script>
@@ -259,12 +273,26 @@
     <script src="app/entities/projectcategory/projectcategory.state.js"></script>
     <script src="app/entities/projectcategory/projectcategory.service.js"></script>
     <script src="app/entities/projectcategory/projectcategory.controller.js"></script>
+    <script src="app/entities/project-service-report-info/project-service-report-infoByProjectDeptService.service.js"></script>
     <script src="app/entities/project-service-report-info/project-service-report-info-dialog.controller.js"></script>
     <script src="app/entities/project-service-report-info/project-service-report-info-detail.controller.js"></script>
     <script src="app/entities/project-service-report-info/project-service-report-info-delete-dialog.controller.js"></script>
     <script src="app/entities/project-service-report-info/project-service-report-info.state.js"></script>
     <script src="app/entities/project-service-report-info/project-service-report-info.service.js"></script>
     <script src="app/entities/project-service-report-info/project-service-report-info.controller.js"></script>
+    <script src="app/entities/project-service-payment-details/project-service-payment-detailsByProjectAndService.service.js"></script>
+    <script src="app/entities/project-service-payment-details/project-service-payment-details-dialog.controller.js"></script>
+    <script src="app/entities/project-service-payment-details/project-service-payment-details-detail.controller.js"></script>
+    <script src="app/entities/project-service-payment-details/project-service-payment-details-delete-dialog.controller.js"></script>
+    <script src="app/entities/project-service-payment-details/project-service-payment-details.state.js"></script>
+    <script src="app/entities/project-service-payment-details/project-service-payment-details.service.js"></script>
+    <script src="app/entities/project-service-payment-details/project-service-payment-details.controller.js"></script>
+    <script src="app/entities/project-service-log/project-service-log-dialog.controller.js"></script>
+    <script src="app/entities/project-service-log/project-service-log-detail.controller.js"></script>
+    <script src="app/entities/project-service-log/project-service-log-delete-dialog.controller.js"></script>
+    <script src="app/entities/project-service-log/project-service-log.state.js"></script>
+    <script src="app/entities/project-service-log/project-service-log.service.js"></script>
+    <script src="app/entities/project-service-log/project-service-log.controller.js"></script>
     <script src="app/entities/project-phase/project-phase-dialog.controller.js"></script>
     <script src="app/entities/project-phase/project-phase-detail.controller.js"></script>
     <script src="app/entities/project-phase/project-phase-delete-dialog.controller.js"></script>
@@ -277,6 +305,12 @@
     <script src="app/entities/project-finance-investment/project-finance-investment.state.js"></script>
     <script src="app/entities/project-finance-investment/project-finance-investment.service.js"></script>
     <script src="app/entities/project-finance-investment/project-finance-investment.controller.js"></script>
+    <script src="app/entities/project-attachemnt/project-attachemnt-dialog.controller.js"></script>
+    <script src="app/entities/project-attachemnt/project-attachemnt-detail.controller.js"></script>
+    <script src="app/entities/project-attachemnt/project-attachemnt-delete-dialog.controller.js"></script>
+    <script src="app/entities/project-attachemnt/project-attachemnt.state.js"></script>
+    <script src="app/entities/project-attachemnt/project-attachemnt.service.js"></script>
+    <script src="app/entities/project-attachemnt/project-attachemnt.controller.js"></script>
     <script src="app/entities/particular/particular-dialog.controller.js"></script>
     <script src="app/entities/particular/particular-detail.controller.js"></script>
     <script src="app/entities/particular/particular-delete-dialog.controller.js"></script>
@@ -388,8 +422,6 @@
     <script src="app/entities/department/department.state.js"></script>
     <script src="app/entities/department/department.service.js"></script>
     <script src="app/entities/department/department.controller.js"></script>
-    <script src="app/entities/customServices/FileManagement.service.js"></script>
-    <script src="app/entities/customDirectives/FileManagement.directive.js"></script>
     <script src="app/entities/country/country-dialog.controller.js"></script>
     <script src="app/entities/country/country-detail.controller.js"></script>
     <script src="app/entities/country/country-delete-dialog.controller.js"></script>
@@ -481,9 +513,6 @@
     <script src="app/blocks/config/http.config.js"></script>
     <script src="app/blocks/config/compile.config.js"></script>
     <script src="app/blocks/config/alert.config.js"></script>
-    <script src="app/assignservicetoproject/paymentservice_controller.js"></script>
-    <script src="app/assignservicetoproject/assignservicetoproject.state.js"></script>
-    <script src="app/assignservicetoproject/assignservicetoproject.controller.js"></script>
     <script src="app/app.state.js"></script>
     <script src="app/app.constants.js"></script>
     <script src="app/admin/user-management/user-management-dialog.controller.js"></script>
